@@ -7,6 +7,7 @@
     "https://*.discord.com/*",
     "https://translate.googleapis.com/*"
   ],
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": ["https://*.discord.com/*"],

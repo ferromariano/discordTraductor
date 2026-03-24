@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Configuración de Discord Traductor</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #2f3136; color: white; padding: 25px; }
+        #main {
+            max-width: 500px; 
+            margin: auto;
+        }
+        .field { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #b9bbbe; font-weight: bold; font-size: 0.9rem; }
+        input, textarea { 
+            width: 100%; padding: 10px; background: #202225; 
+            border: 1px solid #040405; color: #dcddde; border-radius: 5px; 
+            box-sizing: border-box; outline: none;
+        }
+        input:focus, textarea:focus { border-color: #5865f2; }
+        textarea { height: 120px; font-family: 'Consolas', monospace; font-size: 0.85rem; resize: vertical; }
+        
+        .actions { display: flex; gap: 10px; margin-top: 20px; }
+        button { 
+            flex: 1; padding: 12px; border: none; border-radius: 4px; 
+            cursor: pointer; font-weight: bold; transition: background 0.2s;
+        }
+        #save { background: #5865f2; color: white; }
+        #save:hover { background: #4752c4; }
+        
+        #reset { background: #ed4245; color: white; }
+        #reset:hover { background: #c03537; }
+
+        .status { margin-top: 15px; padding: 10px; border-radius: 4px; text-align: center; display: none; font-size: 0.9rem; position: absolute; top: 0px; right: 10px; }
+        .status.success { background: rgba(59, 165, 94, 0.2); color: #3ba55e; display: block; }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2 style="margin-top: 0;">⚙️ Discord Traductor</h2>
+        <div class="field">
+            <label>Idioma de Lectura (Target)</label>
+            <input type="text" id="readTarget" placeholder="es">
+        </div>
+        <div class="field">
+            <label>Idioma de Escritura (Ctrl+Enter)</label>
+            <input type="text" id="writeTarget" placeholder="en">
+        </div>
+        <div class="field">
+            <label>Prefijo de Caché</label>
+            <input type="text" id="cachePrefix" placeholder="tr_">
+        </div>
+        <div class="field">
+            <label>CSS Personalizado</label>
+            <textarea id="customCSS" placeholder="Define aquí tus clases..."></textarea>
+        </div>
+        <div class="actions">
+            <button id="save">Guardar Cambios</button>
+            <button id="reset">Restablecer Valores</button>
+        </div>
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #4f545c;">
+        <div class="field">
+            <label>Mantenimiento de Memoria</label>
+            <p style="font-size: 0.8rem; color: #b9bbbe; margin-bottom: 10px;">
+                Borra todas las traducciones guardadas para liberar espacio. No afecta tu configuración.
+            </p>
+            <button id="clearCache" style="background: #4f545c; width: 100%;">Limpiar Caché de Traducciones</button>
+        </div>
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
