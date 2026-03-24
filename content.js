@@ -56,7 +56,10 @@
                 const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
 
                 const response = await fetch(url);
-                if (!response.ok) throw new Error('Network response error', { cause: response });
+                if (!response.ok) {
+                    console.error(`[Translator]: Error en respuesta de traducción (${response.status})`, response);
+                    throw new Error('Network response error');
+                }
 
                 const data = await response.json();
                 const translatedText = data[0].map(item => item[0]).join('');
