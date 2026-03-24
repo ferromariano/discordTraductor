@@ -1,3 +1,4 @@
+![Discord Traductor](/header.png)
 # 🌍 Discord Traductor
 
 **Discord Traductor** es una extensión de navegador ligera y potente diseñada para romper las barreras lingüísticas en tiempo real. Permite traducir mensajes entrantes automáticamente y traducir tus propios mensajes salientes antes de enviarlos, todo manteniendo la estética original de Discord.
