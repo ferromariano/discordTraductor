@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Discord Real-time Translator",
+  "version": "1.0",
+  "permissions": ["storage", "unlimitedStorage"],
+  "host_permissions": [
+    "https://*.discord.com/*",
+    "https://translate.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.discord.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
